@@ -115,9 +115,7 @@ def load_lemmatizer():
     #WordNetLemmatizer formats words back to its basis - removes noise in dataset
     #example: go, went, gone, goes, going --> go
     import nltk
-    from nltk.stem import WordNetLemmatizer
-    #stopwords removes any unvaluable words like this, for, in, ...
-    from nltk.corpus import stopwords
+    from nltk.stem import WordNetLemmatizers
     nltk.download('wordnet')
 
 
@@ -130,7 +128,6 @@ def sentence_to_wordlist(raw):
     from nltk.stem import WordNetLemmatizer
     #stopwords removes any unvaluable words like this, for, in, ...
     from nltk.corpus import stopwords
-    nltk.download('wordnet')
     """
     Receives a raw sentence and cleans it using the following steps:
     1. Includes only words and numbers
