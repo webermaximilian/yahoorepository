@@ -178,7 +178,7 @@ nltk.download('wordnet')
 
 # In[114]:
 
-@Pre raw sentences as Args
+@Pre raw sentences
 @Post cleaned wordlist
 #convert into a list of words
 #remove unnecessary split into words, no hyphens
