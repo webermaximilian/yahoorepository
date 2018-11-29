@@ -1,4 +1,4 @@
-from function_library.py import *
+from function_library import *
 
 #keras model
 from keras.models import Sequential
