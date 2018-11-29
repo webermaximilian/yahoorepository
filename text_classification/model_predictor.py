@@ -1,4 +1,4 @@
-from function_library.py import *
+import function_library.py
 
 from keras.models import model_from_json
 
