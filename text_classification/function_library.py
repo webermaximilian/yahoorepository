@@ -178,8 +178,8 @@ nltk.download('wordnet')
 
 # In[114]:
 
-@Pre raw sentences
-@Post cleaned wordlist
+#@Pre raw sentences
+#@Post cleaned wordlist
 #convert into a list of words
 #remove unnecessary split into words, no hyphens
 def sentence_to_wordlist(raw):
@@ -258,8 +258,8 @@ padded_testing_set = pad_sequences(tokenized_testing_set, maxlen=maxlen)
 
 # In[50]:
 
-@Pre filepath of pretrained model, word_index of pretrained tokenizer, embedding_dim as Hyperparameter
-@Post returns embedding_matrix which is used in keras model
+#@Pre filepath of pretrained model, word_index of pretrained tokenizer, embedding_dim as Hyperparameter
+#@Post returns embedding_matrix which is used in keras model
 #creates embedding matrix for later use with pretrained glove model
 def create_embedding_matrix(filepath, word_index, embedding_dim):
     vocab_size = len(word_index) + 1  # Adding again 1 because of reserved 0 index
