@@ -14,7 +14,6 @@ model.load_weights('model_weights.h5')
 
 
 import pickle
-
 # loading tokenizer
 with open('tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
