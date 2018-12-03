@@ -9,15 +9,18 @@ import re
 MAX_NB_WORDS = 200000
 #MAX_SEQUENCE_LENGTH sets limit of words in sequence
 MAX_SEQUENCE_LENGTH = 150
+#dimensions of embedding matrix
+embedding_dim = 50
 
 
+#MAYBE INDEX = NONE BECAUSE OF UNNECESSARY 4th COLUMN!! + PATH RELATIVE!!
 def process_data():
     #Load whole yahoo TRAINING dataset from filepath
-    unprocessed_training_data = pd.read_csv(r'C:\Users\maximilian.weber\OneDrive - Synpulse\UserRoaming\Desktop\TextClassificationDatasets-20181112T073934Z-001\TextClassificationDatasets\yahoo_answers_csv\train.csv', header=None)
+    unprocessed_training_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\train.csv', header=None)
     #own header titles
     unprocessed_training_data.columns = ['labels','questions_1','questions_2', 'features']
     #Load whole yahoo TESTING dataset from filepath
-    unprocessed_testing_data = pd.read_csv(r'C:\Users\maximilian.weber\OneDrive - Synpulse\UserRoaming\Desktop\TextClassificationDatasets-20181112T073934Z-001\TextClassificationDatasets\yahoo_answers_csv\test.csv', header=None)
+    unprocessed_testing_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\test.csv', header=None)
     #Own header titles
     unprocessed_testing_data.columns = ['labels','questions_1','questions_2', 'features']
 
@@ -208,7 +211,6 @@ def create_embedding_matrix(filepath, word_index, embedding_dim):
 
 def build_embedding_matrix():
     #builds embedding_matrix with pretrained glove model
-    embedding_dim = 50
     embedding_matrix = create_embedding_matrix(
         r'C:\Users\maximilian.weber\Downloads\glove.6B\glove.6B.50d.txt',
         tokenizer.word_index, embedding_dim)
