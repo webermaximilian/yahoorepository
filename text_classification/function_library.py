@@ -16,11 +16,11 @@ embedding_dim = 50
 #MAYBE INDEX = NONE BECAUSE OF UNNECESSARY 4th COLUMN!! + PATH RELATIVE!!
 def process_data():
     #Load whole yahoo TRAINING dataset from filepath
-    unprocessed_training_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\train.csv', header=None)
+    unprocessed_training_data = pd.read_csv(r'..\train.csv', header=None, index=None)
     #own header titles
     unprocessed_training_data.columns = ['labels','questions_1','questions_2', 'features']
     #Load whole yahoo TESTING dataset from filepath
-    unprocessed_testing_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\test.csv', header=None)
+    unprocessed_testing_data = pd.read_csv(r'..\test.csv', header=None, index=None)
     #Own header titles
     unprocessed_testing_data.columns = ['labels','questions_1','questions_2', 'features']
 
