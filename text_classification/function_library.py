@@ -3,7 +3,6 @@
 import pandas as pd, numpy as np
 #regular expression - manipulate sentences
 import re
-
 #Hyperparameters
 #MAX_NB_WORDS provides limit of words stored in vocabulary
 MAX_NB_WORDS = 200000
@@ -14,24 +13,30 @@ embedding_dim = 50
 
 
 #MAYBE INDEX = NONE BECAUSE OF UNNECESSARY 4th COLUMN!! + PATH RELATIVE!!
-def process_data():
+def process_data(path_to_origin, path_to_train_file, path_to_test_file):
     #Load whole yahoo TRAINING dataset from filepath
-    unprocessed_training_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\train.csv', header=None)
+    unprocessed_training_data = pd.read_csv(path_to_origin + path_to_train_file, header=None, index_col=None)
     #own header titles
     unprocessed_training_data.columns = ['labels','questions_1','questions_2', 'features']
     #Load whole yahoo TESTING dataset from filepath
-    unprocessed_testing_data = pd.read_csv(r'C:\Users\maximilian.weber\yahoo_github\test.csv', header=None)
+    unprocessed_testing_data = pd.read_csv(path_to_origin + path_to_test_file, header=None, index_col=None)
     #Own header titles
     unprocessed_testing_data.columns = ['labels','questions_1','questions_2', 'features']
+    return unprocessed_training_data, unprocessed_testing_data
 
 
-def delete_data():
+def delete_data(unprocessed_training_data, unprocessed_testing_data):
     #delete unnecessary columns of TRAINING dataset
     del unprocessed_training_data['questions_1']
     del unprocessed_training_data['questions_2']
     #delete unnecessary columns of TESTING dataset
     del unprocessed_testing_data['questions_1']
     del unprocessed_testing_data['questions_2']
+    #delete all rows without content of TRAINING dataset
+    processed_training_data = unprocessed_training_data.dropna()
+    #delete all rows without content of TESTING dataset
+    processed_testing_data = unprocessed_testing_data.dropna()
+    return processed_training_data, processed_testing_data
 
 
 def drop_na_data():
