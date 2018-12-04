@@ -1,9 +1,3 @@
-Society & Culture,Science & Mathematics,
-Health
-,Education & Reference,
-Computers & Internet,
-Sports
-,Business & Finance
-,Entertainment & Music,
-Family & Relationships,
-Politics & Government
+version https://git-lfs.github.com/spec/v1
+oid sha256:9840733e743be38b91d184859ef137ac451cce191fa1bd49106629404817eacc
+size 191
