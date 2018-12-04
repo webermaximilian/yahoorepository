@@ -271,7 +271,7 @@ def create_embedding_matrix(filepath, word_index, embedding_dim):
 def build_embedding_matrix(path_to_origin, tokenizer):
     #builds embedding_matrix with pretrained glove model
     embedding_matrix = create_embedding_matrix(
-        path_to_origin + '/glove.6B/glove.6B.50d.txt',
+        path_to_origin + '/glove.6B.50d.txt',
         tokenizer.word_index, embedding_dim)
 
 
