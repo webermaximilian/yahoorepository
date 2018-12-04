@@ -53,7 +53,7 @@ model.add(layers.Embedding(input_dim=vocab_size,
                            weights=[embedding_matrix],
                            input_length=MAX_SEQUENCE_LENGTH,
                            trainable=True))
-model.add(layers.SpatialDropout1D(0.5))
+model.add(layers.Dropout(0.3))
 model.add(layers.LSTM(196, dropout=0.2, recurrent_dropout=0.2))
 model.add(layers.Dense(4, activation='softmax'))
 model.compile(optimizer='adam',
