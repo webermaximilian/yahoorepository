@@ -259,7 +259,7 @@ def create_embedding_matrix(filepath, word_index, embedding_dim):
 
     with open(filepath, encoding="utf8") as f:
         for line in f:
-            word, *vector = line.split()
+            word, vector = line.split()
             if word in word_index:
                 idx = word_index[word]
                 embedding_matrix[idx] = np.array(
