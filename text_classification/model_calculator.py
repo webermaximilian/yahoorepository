@@ -5,8 +5,8 @@ import pandas as pd, numpy as np
 #regular expression - manipulate sentences
 import re
 
-
-path_to_origin = r'C:/Users/maximilian.weber/yahoo_github'
+#C:/Users/maximilian.weber/yahoo_github
+path_to_origin = r'yahoorepository'
 path_to_train_file = '/train.csv'
 path_to_test_file = '/test.csv'
 
