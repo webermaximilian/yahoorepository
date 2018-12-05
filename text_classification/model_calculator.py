@@ -6,7 +6,7 @@ import pandas as pd, numpy as np
 import re
 
 #C:/Users/maximilian.weber/yahoo_github
-path_to_origin = r'/home/ubuntu/yahoorepository'
+path_to_origin = r'/home/ubuntu'
 path_to_train_file = '/train.csv'
 path_to_test_file = '/test.csv'
 

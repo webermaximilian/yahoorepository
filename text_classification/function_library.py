@@ -18,6 +18,7 @@ def process_data(path_to_origin, path_to_train_file, path_to_test_file):
     unprocessed_training_data = pd.DataFrame(pd.np.empty((0, 4)))
     unprocessed_training_data = pd.read_csv(path_to_origin + path_to_train_file, header=None)
     #own header titles
+    print(unprocessed_training_data.head())
     unprocessed_training_data.columns = ['labels','questions_1','questions_2', 'features']
     #Load whole yahoo TESTING dataset from filepath
     unprocessed_testing_data = pd.DataFrame(pd.np.empty((0, 4)))
@@ -261,7 +262,7 @@ def create_embedding_matrix(filepath, word_index, embedding_dim):
 
     with open(filepath, encoding="utf8") as f:
         for line in f:
-            word, vector = line.split()
+            word, *vector = line.split()
             if word in word_index:
                 idx = word_index[word]
                 embedding_matrix[idx] = np.array(
