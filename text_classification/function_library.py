@@ -15,10 +15,12 @@ embedding_dim = 50
 #MAYBE INDEX = NONE BECAUSE OF UNNECESSARY 4th COLUMN!! + PATH RELATIVE!!
 def process_data(path_to_origin, path_to_train_file, path_to_test_file):
     #Load whole yahoo TRAINING dataset from filepath
+    unprocessed_training_data = pd.DataFrame(pd.np.empty((0, 4)))
     unprocessed_training_data = pd.read_csv(path_to_origin + path_to_train_file, header=None)
     #own header titles
     unprocessed_training_data.columns = ['labels','questions_1','questions_2', 'features']
     #Load whole yahoo TESTING dataset from filepath
+    unprocessed_testing_data = pd.DataFrame(pd.np.empty((0, 4)))
     unprocessed_testing_data = pd.read_csv(path_to_origin + path_to_test_file, header=None)
     #Own header titles
     unprocessed_testing_data.columns = ['labels','questions_1','questions_2', 'features']
