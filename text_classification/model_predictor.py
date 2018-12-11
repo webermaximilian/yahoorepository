@@ -1,6 +1,9 @@
 from function_library import *
 
 from keras.models import model_from_json
+from keras.preprocessing.sequence import pad_sequences
+
+maxlen = 150
 
 # Model reconstruction from JSON file
 with open('model_architecture.json', 'r') as f:
